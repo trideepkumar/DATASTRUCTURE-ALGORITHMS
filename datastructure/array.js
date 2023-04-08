@@ -19,4 +19,9 @@ for(const item of arr){
 //concat
 //slice
 const fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-console.log(fruits.slice(1,3));
+// console.log(fruits.slice(1,3));   //output : [ 'Orange', 'Lemon' ]  in slice the 2nd position is neglected.
+fruits.splice(2,0, "age", "name")   
+console.log(fruits);  
+
+//output
+['Banana','Orange','age','name','Lemon','Apple','Mango']
