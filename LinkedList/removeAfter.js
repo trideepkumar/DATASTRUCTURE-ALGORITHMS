@@ -10,6 +10,7 @@ class LinkedList{
         this.head = null 
         this.size = 0
     }
+    
     insert(value){
         const node = new Node(value)
         if(this.size === 0){
@@ -25,6 +26,7 @@ class LinkedList{
         }
         this.size++
     }
+
     deleteRight(value){
       let current = this.head
       while(current){
