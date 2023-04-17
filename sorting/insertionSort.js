@@ -1,28 +1,16 @@
-// function insertionSort(arr){
-//     for(i=1; i<arr.length ; i++){
-//         let numbertoInsert = arr[i]
-//         let j = i-1
-//         while(j >= 0 && a[j] > numbertoInsert ){
-//             arr[j+1] = arr[j]
-//             j=j-1
-//         }
-//         arr[j+1] = numbertoInsert
-//     }
-// }
-
 function insertionSort(arr){
-    for(i=1 ; i < arr.length ; i++){
+    for(let i=1 ; i < arr.length ; i++ ){
         let numbertoInsert = arr[i]
         let j = i-1
-    while(j >= 0 && arr[j] > numbertoInsert){
-        arr[j+1] = arr[j]
-        j = j-1
+        while(j >= 0 && arr[j] > numbertoInsert){
+            arr[j+1] = arr[j]
+            j--
+        }
+        arr[j+1] = numbertoInsert
     }
-    arr[j+1] = numbertoInsert
-    }
+    return arr
 }
 
-
-const arr = [34,5,67,-3,56,-6,0]
-insertionSort(arr)
-console.log(arr);
+const arr = [1,5,3,6,3,2,8,45]
+const result = insertionSort(arr)
+console.log(result)

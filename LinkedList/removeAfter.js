@@ -10,7 +10,7 @@ class LinkedList{
         this.head = null 
         this.size = 0
     }
-    
+
     insert(value){
         const node = new Node(value)
         if(this.size === 0){
@@ -53,5 +53,5 @@ list.insert(20)
 list.insert(30)
 list.insert(40)
 list.insert(50)
-list.deleteRight(0)
+list.deleteRight(30)
 list.print()

@@ -1,4 +1,4 @@
-const arr = [1, 2, 4, 5, 7, 8, 9, 9, 0, 0, 7, 65, 4, 3];
+// const arr = [1, 2, 4, 5, 7, 8, 9, 9, 0, 0, 7, 65, 4, 3];
 // let largestOdd = -Infinity
 
 // for (let i = 0; i < arr.length; i++) {
@@ -12,18 +12,28 @@ const arr = [1, 2, 4, 5, 7, 8, 9, 9, 0, 0, 7, 65, 4, 3];
 // } else {
 //   console.log("The largest odd number in the array is: " + largestOdd);
 // }
-const largestOdd = (arr)=>{
-    let large = arr[0]
-    for(let i=0 ; i<arr.length; i++){
-        if(arr[i]%2 === 1 && arr[i]>large){
-             large = arr[i]
-        }
-    }
-    return large
+// const largestOdd = (arr)=>{
+//     let large = arr[0]
+//     for(let i=0 ; i<arr.length; i++){
+//         if(arr[i]%2 === 1 && arr[i]>large){
+//              large = arr[i]
+//         }
+//     }
+//     return large
+// }
+
+// const result = largestOdd(arr)
+// console.log(result)
+
+let arr = [112, 34, 23, 33, 45, 56, 78];
+let output = [];
+
+for (let i = 0; i < arr.length; i += 2) {
+  output.push(arr[i]);
 }
 
-const result = largestOdd(arr)
-console.log(result)
+console.log(output);
+
 
 
 

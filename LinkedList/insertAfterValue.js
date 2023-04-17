@@ -40,6 +40,21 @@ class LinkedList{
         }
         this.size++
     }
+
+    reverseList(){
+        let current = this.head
+        let previous = null
+        let next = null
+         while(current.next){
+            next = current.next
+            current.next = previous
+            previous = current
+            current = next
+         }
+         current = this.head
+    }
+
+
     print(){
         let current = this.head
         while(current){
@@ -55,5 +70,4 @@ const list = new LinkedList()
 list.insert(10)
 list.insert(20)
 list.insert(30)
-list.insertValueAfter(20,100)
-list.print()
+list.reverseList()
