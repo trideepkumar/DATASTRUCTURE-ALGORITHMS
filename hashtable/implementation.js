@@ -34,7 +34,6 @@ class HashTable{
 }
 
 const table = new HashTable(50)
-
 table.set("names","bob")
 table.set("age",21)
 table.set("place","india")

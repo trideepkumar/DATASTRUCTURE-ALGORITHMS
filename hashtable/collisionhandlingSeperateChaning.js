@@ -1,3 +1,6 @@
+
+//collision hanlding using seperate chaining in Array
+
 class HashTable{
     constructor(size){
         this.table = new Array(size)
@@ -11,10 +14,12 @@ class HashTable{
         return hash % this.size
     }
 
+    //collision handling using the seperate chaining
+
+
     set(key,value){
         const index = this.hash(key)
         // this.table[index] = value
-        // console.log(index);
         //handling collision using 
         if(!this.table[index]){
             this.table[index] = [[key,value]]
@@ -22,8 +27,6 @@ class HashTable{
         else{
             this.table[index].push([key,value])
         }
-        // console.log(this.table)
-        // return
     }
 
     get(key){
@@ -35,6 +38,17 @@ class HashTable{
                 }
         }
         return undefined
+    }
+
+    remove(key){
+        const index = this.hash(key)
+        if(this.table[index]){
+            const sameItem = this.table[index].find(item => item[0] === key)
+            console.log(sameItem)
+            if(sameItem){
+                this.table[index].splice(sameItem,1)
+            }
+        }
     }
 
     display(){
@@ -49,12 +63,13 @@ class HashTable{
 
 const table = new HashTable(17)
 
-table.set("name","trideep")
+// table.set("name","trideep")
 table.set("age",20)
 table.set("place","india")
 table.set("name","bob")
 table.set("name","jobs")
+table.set("name","steve")
+table.remove('name')
 
 table.display()
 
-console.log(table.get("age"));
