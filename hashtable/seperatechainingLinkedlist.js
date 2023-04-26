@@ -81,7 +81,6 @@ class HashTable {
     
         while (current) {
             if (current.key === key) {
-                console.log('123');
                 return current.value;
             }
             current = current.next;

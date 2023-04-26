@@ -7,7 +7,10 @@ const selectionSort = (arr) => {
           lowest = j;
         }
       }
-      [arr[i],arr[lowest]] = [arr[lowest],arr[i]];
+      console.log( [arr[i],arr[lowest]]);
+      console.log("hi");
+      console.log([arr[lowest],arr[i]]);
+     [arr[i],arr[lowest]] = [arr[lowest],arr[i]]
     }
     return arr;
   };

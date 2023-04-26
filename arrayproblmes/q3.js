@@ -24,7 +24,7 @@ const result = sameItem(arr1,arr2)
 console.log(result)
 
 
-//by using the object creating method
+//by using the object creating
 
 function unique(arr1,arr2){
     let obj = {}

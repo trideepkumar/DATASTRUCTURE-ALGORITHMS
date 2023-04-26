@@ -21,8 +21,20 @@
 //     return sortedArray.concat(leftArr).concat(rightArr)
 // }
 
-// const arr = [2,-6,-1,6,9,3]
-// console.log(mergeSort(arr))
+function merge(left,right) {
+
+    let sorted = []
+    while (left.length && right.length) {
+        if(left[0]<=right[0]){
+      sorted.push(left.shift())
+    }else{
+      sorted.push(right.shift())
+    }
+    }
+  
+    return [...sorted,...left,...right]
+  }
+  
 
 function mergeSort(arr){
     if(arr.length < 2){
@@ -35,13 +47,9 @@ function mergeSort(arr){
     return merge(mergeSort(leftArr),mergeSort(rightArr))
 }
 
-function merge(leftArr,rightArr){
-      const sortedArray = []
-     while(leftArr.length>0 && rightArr.length>0){
-        if(leftArr[0]<=rightArr[0]){
-            sortedArray.push(leftArr.shift())
-        }
-        sortedArray.push(rightArr.shift())
-     }
-     return sortedArray.concat(leftArr).concat(rightArr)
-}
+
+
+const arr = [2,-6,-1,6,9,3]
+console.log(mergeSort(arr))
+
+

@@ -1,6 +1,4 @@
-
 //collision hanlding using seperate chaining in Array
-
 class HashTable{
     constructor(size){
         this.table = new Array(size)
@@ -15,8 +13,6 @@ class HashTable{
     }
 
     //collision handling using the seperate chaining
-
-
     set(key,value){
         const index = this.hash(key)
         // this.table[index] = value

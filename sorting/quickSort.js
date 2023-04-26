@@ -18,6 +18,7 @@ const partition = (arr,start,end)=>{
             arr[j] = temp
         }
     }
+//   console.log(i)
     i++
     let temp  = arr[i]
         arr[i]= arr[end]
