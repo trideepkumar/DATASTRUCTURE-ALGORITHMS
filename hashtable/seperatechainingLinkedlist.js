@@ -13,7 +13,6 @@ class HashTable {
     constructor(size) {
         this.table = new Array(size)
         this.size = size
-        this.count = 0
     }
 
     hash(key) {
@@ -29,7 +28,7 @@ class HashTable {
 
         this.table = new Array(newSize)
         this.size = newSize
-        this.count = 0
+       
 
         for(let i=0 ;i<oldData.length;i++){
             let current = oldData[i]
@@ -43,7 +42,6 @@ class HashTable {
                     node.next = this.table[newIndex]
                     this.table[newIndex] = node
                 }
-                this.count++
                 current = current.next
             }
         }
@@ -61,15 +59,12 @@ class HashTable {
         
         if (!this.table[index]) {
           this.table[index] = node
-          this.count++
         } else {
             if(this.table[index].key === key){     //this condition is for updating the values with the same index
                 this.table[index].value =value
-                this.count++
             } else {
                 node.next = this.table[index]
                 this.table[index] = node
-                this.count++
             }
         }
       }
@@ -118,7 +113,7 @@ remove(key){
     
 
     display() {
-        for (let i = 0; i < this.table.length; i++) {
+        for (let i = 0 ; i < this.table.length ; i++) {
             if (this.table[i]) {
                 let current = this.table[i]
                 while (current) {
