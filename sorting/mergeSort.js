@@ -32,7 +32,7 @@ function merge(left,right) {
     }
     }
   
-    return [...sorted,...left,...right]
+    return sorted.concat(left).concat(right)
   }
   
 

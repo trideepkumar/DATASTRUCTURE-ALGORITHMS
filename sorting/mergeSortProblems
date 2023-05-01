@@ -1,0 +1,21 @@
+Given an array of numbers, sort the array in ascending order.
+Given an array of numbers, find the smallest and largest elements in the array.
+Given an array of numbers, find the median of the array.
+Given an array of numbers, find the kth smallest element in the array.
+Given an array of numbers, find the number of times each element appears in the array.
+Given an array of numbers, find the sum of all the elements in the array.
+Given an array of numbers, find the product of all the elements in the array.
+Given an array of numbers, find the difference between the largest and smallest elements in the array.
+Given an array of numbers, find the average of all the elements in the array.
+Given an array of numbers, find the standard deviation of all the elements in the array.
+In addition to these problems, merge sort can also be used to solve many other problems, such as:
+
+Merging two sorted arrays.
+Splitting an array into two sorted arrays.
+Finding the intersection of two sorted arrays.
+Finding the union of two sorted arrays.
+Finding the difference of two sorted arrays.
+Counting the number of inversions in an array.
+Sorting an array of strings.
+Sorting an array of objects.
+Merge sort is a very versatile sorting algorithm that can be used to solve a wide variety of problem
