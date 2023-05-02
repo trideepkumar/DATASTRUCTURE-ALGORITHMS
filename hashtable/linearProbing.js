@@ -14,30 +14,23 @@ class HashTable{
 
     set(key,value){
         let index = this.hash(key)
-        // console.log(index)
-        if(!this.table[index]){
-            this.table[index] = [[key,value]]
+        while(this.table[index] && this.table[index][0]!==key){
+            index = index+1 % this.size
+        }
+        if(this.table[index] && this.table[index][0] === key){
+            this.table[index][1] = value
         }
         else{
-            while(this.table[index]!== undefined){
-                if(this.table[index][0] === key){
-                    this.table[index][1] = value
-                }
-                this.table[index] = this.table[index+1]
-            }
-            this.table[index] = [[key,value]]
+            this.table[index] = [key,value]
         }
         return this.table
     }
   
     get(key){
         let index = this.hash(key)
-       
-      
-           while(this.table[index] !== undefined){
-              if(this.table[index][0][0] === key){
-                console.log(this.table[index][0][1])
-                return
+           while(this.table[index]){
+              if(this.table[index][0] === key){
+                return console.log(this.table[index][1])
               }
               this.table[index] = this.table[index+1]
            }
@@ -58,7 +51,9 @@ const table = new HashTable(10)
 
 table.set("name","bob")
 table.set("name","marley")
+table.set("name","pablo")
 table.set("place","india")
-table.set("age",21)
-table.get("")
+table.set("place","colombia")
+table.set("age",45)
+table.get("name")
 // table.display()

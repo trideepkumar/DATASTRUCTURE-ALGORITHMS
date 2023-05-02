@@ -52,15 +52,15 @@ class HashTable {
     set(key, value) {
         const index = this.hash(key);
         const node = new Node(key,value)
-        let loadfactor  = this.count/this.size
-        if(loadfactor > 0.75 ){
-            table.rehash()
-        }
+        // let loadfactor  = this.count/this.size
+        // if(loadfactor > 0.75 ){
+        //     table.rehash()
+        // }
         
         if (!this.table[index]) {
           this.table[index] = node
         } else {
-            if(this.table[index].key === key){     //this condition is for updating the values with the same index
+            if(this.table[index].key === key){  
                 this.table[index].value =value
             } else {
                 node.next = this.table[index]
@@ -137,6 +137,7 @@ table.set("name","jobs")
 
 table.set("place","india")
 table.set("age",21)
+
 table.remove('place')
 
 

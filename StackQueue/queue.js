@@ -1,22 +1,59 @@
-//implementing queue with the array
+class Node {
+    constructor(value) {
+      this.value = value;
+      this.next = null;
+    }
+  }
+  
+  class Queue {
+    constructor() {
+      this.first = null;
+      this.last = null;
+      this.size = 0;
+    }
+  
+    enqueue(value) {
+      const node = new Node(value);
+      if (!this.first) {
+        this.first = node;
+        this.last = node;
+      } else {
+        this.last.next = node;
+        this.last = node;
+      }
+      this.size++;
+      return this;
+    }
+  
+    dequeue() {
+      if (!this.first) {
+        return null;
+      }
+      const first = this.first;
+      this.first = first.next;
+      this.size--;
+      return first.value;
+    }
 
-var q = []
+    display(){
+        let current = this.first
+        while(current){
+            console.log(current.value)
+            current = current.next
+        }
+    }
+  
+    
+  }
+  
+const queue = new Queue()
 
-q.push('1')
-q.push('2')
-q.push('3')
-q.push('4')
+queue.enqueue(10)
+queue.enqueue(20)
+queue.enqueue(30)
+queue.enqueue(40)
+queue.enqueue(40)
 
-q.shift()
+queue.dequeue()
 
-q.unshift(2)
-q.unshift(3)
-q.unshift(4)
-
-q.pop()
-
-
-//combining push & shift gives the queue funtionality
-//combining unshift & pop gives the queue functionality
-
-console.log(q);
+queue.display()

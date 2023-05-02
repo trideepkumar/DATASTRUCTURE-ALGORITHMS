@@ -3,13 +3,13 @@ function insertionSort(arr){
         let current = arr[i]
         let j = i-1
         while(j>=0 && arr[j]>current){
-           arr[j+1] = arr[j]
-           j-- 
-        }
+            arr[j+1] = arr[j]
+            j--
+        } 
         arr[j+1] = current
     }
     return arr
 }
 
-const arr = [6,5,9,4,7,3,9,12,67,35,2,1]
+const arr = [4,67,4,2,3,1]
 console.log(insertionSort(arr))

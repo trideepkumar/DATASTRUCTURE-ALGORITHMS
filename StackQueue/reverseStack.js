@@ -1,5 +1,3 @@
-const { pre } = require("typegoose")
-
 class Node{
     constructor(value){
         this.value = value
@@ -10,49 +8,48 @@ class Node{
 class Stack{
     constructor(){
         this.head = null
-        this.size = 0
     }
-
     push(value){
         const node = new Node(value)
-        node.next = this.head
-        this.head = node
-    }
-
-    reverseList(){
-        if(this.head === null){
-            return null
+        if(!this.head){
+            this.head = node
         }
-        const prev = null
-        const current = this.head
-        const next = current.next
-
-        while(current){
-            current.next = prev
-            prev = current
-            current = next
-            next = current ? current.next : null
+        else{
+            node.next = this.head
+            this.head = node
         }
-        return prev
     }
-
+    reverse(){
+        let current = this.head
+    
+            let reversedArr = []
+            while(current){
+               reversedArr.unshift(current.value)
+               current = current.next
+            }
+            return console.log(...reversedArr);
+    }
     display(){
         let current = this.head
         while(current){
-            console.log(current.value)  
-            current = current.next     
-         }
-        
+            console.log(current.value)
+            current = current.next
+        }
     }
 }
 
-const list = new Stack()
+const stack = new Stack(10)
 
-list.push(20)
-list.push(30)
-list.push(40)
-list.push(50)
+stack.push(10)
+stack.push(20)
+stack.push(30)
+stack.push(40)
+stack.push(50)
 
-list.reverseList()
+stack.display()
 
-list.display()
+console.log('reverse')
+
+stack.reverse()
+
+// stack.display()
