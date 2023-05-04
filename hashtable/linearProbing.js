@@ -29,13 +29,32 @@ class HashTable{
     get(key){
         let index = this.hash(key)
            while(this.table[index]){
-              if(this.table[index][0] === key){
+              if(this.table[index][0] === key ){
                 return console.log(this.table[index][1])
               }
               this.table[index] = this.table[index+1]
            }
         
       }
+
+        isPrime(value){
+            for(let i=0 ;i<this.table.length;i++){
+                let val
+                if(this.table[i]){
+                    if(this.table[i][1] === value){
+                        val = value
+                    }
+                    if(val){
+                        for(let i = 2; i <= (val/2); i++){
+                            if(val % i === 0){
+                            return false
+                            }
+                            return true
+                        }
+                    }
+                }
+            }
+        }
 
     display(){
         for(let i=0;i<this.table.length ; i++){
@@ -54,6 +73,9 @@ table.set("name","marley")
 table.set("name","pablo")
 table.set("place","india")
 table.set("place","colombia")
-table.set("age",45)
-table.get("name")
+table.set("number",45)
+table.set("age",7)
+// table.get("name")
 // table.display()
+
+console.log(table.isPrime(45))

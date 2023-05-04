@@ -34,6 +34,7 @@ class Node {
       this.size--;
       return first.value;
     }
+     
 
     display(){
         let current = this.first
@@ -52,8 +53,10 @@ queue.enqueue(10)
 queue.enqueue(20)
 queue.enqueue(30)
 queue.enqueue(40)
-queue.enqueue(40)
+
 
 queue.dequeue()
+
+
 
 queue.display()

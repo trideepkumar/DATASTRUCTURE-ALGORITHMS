@@ -21,7 +21,6 @@ class Stack{
     }
     reverse(){
         let current = this.head
-    
             let reversedArr = []
             while(current){
                reversedArr.unshift(current.value)

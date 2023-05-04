@@ -1,4 +1,4 @@
-const quickSort = (arr, start =0,end=arr.length-1)=>{
+const quickSort = (arr, start=0 , end=arr.length-1)=>{
     if(start<end){ 
         let index = partition(arr,start,end)
         quickSort(arr,start,index-1)
@@ -18,7 +18,6 @@ const partition = (arr,start,end)=>{
             arr[j] = temp
         }
     }
-//   console.log(i)
     i++
     let temp  = arr[i]
         arr[i]= arr[end]
@@ -26,6 +25,6 @@ const partition = (arr,start,end)=>{
         return i 
 }
 
-arr = [15,1,3,2,12]
+arr = [15,1,3,2,12,0]
 quickSort(arr)
 console.log(arr)

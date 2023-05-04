@@ -7,7 +7,7 @@ class hashTable{
   
     hash(key){
       let tot = 0 
-      for(let i = 0 ;i<Math.min(key.length,100);i++){
+      for(let i = 0 ; i < Math.min(key.length,100) ; i++){
         let ch = key[i]
         let cha = ch.toLowerCase()
         let char = cha.charCodeAt(0)-96
@@ -16,6 +16,7 @@ class hashTable{
       }
       return tot
     }
+
   
     rehash(){
       let oldTable = this.table
@@ -62,14 +63,14 @@ class hashTable{
     get(key){
       let index = this.hash(key)
       
-      if(this.table[index][0][1]==key){
+      if(this.table[index][0]===key){
         console.log(this.table[index][0][1])
         return
       }else{
         while (this.table[index] !==undefined) {
-            if (this.table[index][0][0]==key) {
+            if (this.table[index][0]==key) {
               console.log(this.table[index][0])
-              console.log(this.table[index][0][1])
+              console.log(this.table[index][1])
               return
             }
           this.table[index] = this.table[index+1]

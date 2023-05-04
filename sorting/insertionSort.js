@@ -13,4 +13,4 @@ function insertionSort(arr){
 
 const arr  = [3,5,8,3,1,6,4,9,1]
 
-console.log(insertionSort(arr))
+console.log(insertionSort(arr)) 

@@ -9,7 +9,7 @@ class Queue{
     constructor(){
         this.head = null
         this.tail = null
-    }
+    }   
 
     enqueue(value){
         const node = new Node(value)
@@ -28,6 +28,13 @@ class Queue{
             this.head = this.head.next
         }
     }
+    display(){
+        let current = this.head
+        while(current){
+            console.log(current.value)
+            current = current.next
+        }
+    }
 }
 
 const queue = new Queue()
@@ -38,7 +45,9 @@ queue.enqueue(30)
 
 queue.dequeue()
 queue.dequeue()
-queue.dequeue()
+// queue.dequeue()
 
 
-console.log(queue)
+// console.log(queue)
+
+queue.display()

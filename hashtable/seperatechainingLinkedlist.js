@@ -8,6 +8,26 @@ class Node{
     }
 }
 
+class LinkedList {
+    constructor() {
+      this.head = null
+      this.tail = null
+      this.length = 0
+    }
+    unshift(val) {
+      let newNode = new Node(val)
+      if (!this.head) {
+        this.head = newNode
+        this.tail = newNode
+      } else {
+        let temp = this.head
+        this.head = newNode
+        this.head.next = temp
+      }
+      return ++this.length
+    }
+  }
+
 
 class HashTable {
     constructor(size) {
@@ -50,25 +70,23 @@ class HashTable {
     }
 
     set(key, value) {
-        const index = this.hash(key);
-        const node = new Node(key,value)
-        // let loadfactor  = this.count/this.size
-        // if(loadfactor > 0.75 ){
-        //     table.rehash()
-        // }
-        
+        const index = this.hash(key)
         if (!this.table[index]) {
-          this.table[index] = node
+          let list = new LinkedList()
+          list.unshift([key, value])
+          this.table[index] = list
         } else {
-            if(this.table[index].key === key){  
-                this.table[index].value =value
-            } else {
-                node.next = this.table[index]
-                this.table[index] = node
+          let current = this.table[index].head
+          while (current) {
+            if (current.value[0] === key) {
+              current.value[1] = value
+              return
             }
+            current = current.next
+          }
+          this.table[index].unshift([key, value])
         }
-      }
-
+    }
 
       get(key) {
         const index = this.hash(key)
