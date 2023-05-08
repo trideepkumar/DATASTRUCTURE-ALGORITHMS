@@ -212,12 +212,12 @@ tree.insert(35)
 // tree.DFSInorder()
 
 // tree.min()
-tree.max()
+// tree.max()
 
-tree.delete(20)
+// tree.delete(20)
 
-tree.DFSInorder()
-tree.Isvalid()
+// tree.DFSInorder()
+// tree.Isvalid()
 
 console.log(tree.closestValue(35))
 
