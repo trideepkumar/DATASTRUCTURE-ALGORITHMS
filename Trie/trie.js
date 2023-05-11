@@ -56,6 +56,23 @@ class Trie{
         console.log(words);
     }
 
+    fulltraverse(){
+        let words=[]
+    let curr=this.root
+        function traverse(node,word){
+                 if(node.isWordEnd){
+                      words.push(word)
+                    }
+
+        for(let [char,charNode] of node.keys.entries()){ 
+            traverse(charNode,word+char)
+        }
+        }
+        traverse(curr,"")
+        console.log(words);
+    }
+
+
 
 
     // startsWithPrefix(prefix){
@@ -80,6 +97,8 @@ trie.insert("heist")
 trie.insert("heap")
 trie.insert("trideep")
 trie.insert("host")
-// trie.traversal('he')
+trie.traversal('he')
 
-console.log(trie.contains("hello"))
+// console.log(trie.contains("hello"))
+
+trie.fulltraverse()

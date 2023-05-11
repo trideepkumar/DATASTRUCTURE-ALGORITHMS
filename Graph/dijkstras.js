@@ -124,5 +124,13 @@ class WeightedGraph{
     return this
     }
 
-    smallestPath()
+    smallestPath(){
+
+    }
 }
+
+
+
+
+
+

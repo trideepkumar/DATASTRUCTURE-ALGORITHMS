@@ -170,6 +170,7 @@ class BinarySearchTree{
             return close
         }
         if(value < this.root.value){
+            console.log("<")
             difference = Math.abs(value - this.root.value)
             if(difference < largest){
                 largest = difference
@@ -178,13 +179,19 @@ class BinarySearchTree{
            return this.closestValue(this.root.left,value)
         }
         if(value > this.root.value){
+            console.log(">")
             difference = Math.abs(value - this.root.value)
+            console.log(difference)
             if(difference < largest){
+                console.log(">")
                 largest = difference
                 close = this.root.value
+                console.log(">")
             }
+           
            return this.closestValue(this.root.right,value)
         }
+        return close
     }
    
 
@@ -219,6 +226,6 @@ tree.insert(35)
 // tree.DFSInorder()
 // tree.Isvalid()
 
-console.log(tree.closestValue(35))
+console.log(tree.closestValue(33))
 
-
+// tree.Bfs()
