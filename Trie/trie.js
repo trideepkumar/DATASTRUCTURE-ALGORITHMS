@@ -21,6 +21,7 @@ class Trie{
         }
         curr.isWordEnd = true
     }
+    
 
     contains(word){
         let curr = this.root
