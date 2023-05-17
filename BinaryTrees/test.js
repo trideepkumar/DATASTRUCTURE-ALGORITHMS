@@ -6,15 +6,13 @@ class Node{
     }
 }
 
-class Binarytree{
+class BinaryTree{
     constructor(){
         this.root = null
     }
     insert(value){
         const node = new Node(value)
-        if(!this.root){
-            this.root = node
-        }
+        if(!this.root) this.root = node
         else{
             let queue = []
             queue.push(this.root)
@@ -25,8 +23,7 @@ class Binarytree{
                     break
                 }
                 queue.push(current.left)
-
-                if(!current.rigth){
+                if(!current.right){
                     current.right = node
                     break
                 }
@@ -34,17 +31,17 @@ class Binarytree{
             }
         }
     }
-    //traversing a binary treee
-    inorder(root){
+    inorder(root = this.root){
         if(root){
-       this.inorder(root.left)
-       console.log(root.value)
-       this.inorder(root.right)
-    }
+            console.log(root.value)
+            this.inorder(root.left)
+            this.inorder(root.right)
+            
+        }
     }
 }
 
-const btree = new Binarytree()
+const btree = new BinaryTree()
 
 btree.insert(10)
 btree.insert(20)
@@ -52,5 +49,4 @@ btree.insert(30)
 btree.insert(40)
 btree.insert(50)
 
-// console.log(btree)
-btree.inorder(btree.root)
+btree.inorder()

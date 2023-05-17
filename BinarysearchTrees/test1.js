@@ -1,72 +1,108 @@
-class MaxbinaryHeap{
+class Node{
+    constructor(value){
+        this.value = value
+        this.left = null 
+        this.right = null
+    }
+}
+
+class BinarySearchTree{
     constructor(){
-         this.values = []
+        this.root = null
     }
 
-    //inserting to heap
     insert(value){
-        this.values.push(value)
-        this.bubbleUp()
-    }
-    bubbleUp(){
-       let index = this.values.length-1
-       const value = this.values[index]
-       while(index>0){
-       let parentIndex = Math.floor(((index-1)/2))
-       let parent = this.values[parentIndex]
-        if(value <= parent) break
-        this.values[parentIndex] = value
-        this.values[index] = parent
-        index = parentIndex
-       }
-    }
-
-
-
-    removeRoot(){
-        const max = this.values[0]
-        const end = this.values.pop()
-            if(this.values.length){
-                this.values[0] = end
-                this.sinkDown()
-            }
-        return max
-    }
-    sinkDown(){
-        let index = 0
-        let element = this.values[index]
-        while(index < this.values){
-            let leftChildIndex = 2 * index +1
-            let rightChildIndex = 2 * index +2
-            if(leftChildIndex < this.values.length){
-                leftChild = this.values[leftChildIndex]
-                if(element < leftChild){
-                    swap = leftChildIndex
+        const node = new Node(value)
+        if(!this.root) this.root = node
+        let current = this.root
+        while(current){
+            if(current.value === value) return undefined
+            if(current.value < value){
+                if(!current.right){
+                    current.right = node
+                    break
                 }
+                current = current.right
             }
-            if(rightChildIndex < this.values.length){
-                rightChild = this.values[rightChildIndex]
-                if((swap === null && element<rightChild) ||
-                   (swap !== null && leftChild <rightChild)){
-                     swap = rightChildIndex
-                   }
+            else{
+                if(!current.left){
+                    current.left = node
+                    break
+                }
+                current = current.left
             }
-            element = this.values[index]
+        }
+        return this
+    }
+
+    BFS(){
+         let queue = [this.root]
+         while(queue.length){
+            let node = queue.shift()
+            console.log(node.value)
+            if(node.left) queue.push(node.left)
+            if(node.right) queue.push(node.right)
+         }
+         return this
+    }
+
+    DFS(root = this.root){
+        if(root){
+            console.log(root.value)
+            this.DFS(root.left)
+            this.DFS(root.right)
+        }
+    }
+    min(root =this.root){
+        if(!root.left){
+            return root.value
+        }
+        else{
+            return this.min(root.left)
         }
     }
 
+    deleteNode(root,value){
+        if(root === value) return root
+        else if(value < root.value){
+            root.left = this.deleteNode(root.left,value)
+        }
+        else if (value < root.value){
+            root.right = this.deleteNode(root.right,value)
+        }
+        else{
+            if(!root.right && !root.left){
+                return null
+            }
+            else if(!root.right){
+                return root.left
+            }
+            else if(!root.left){
+                return root.right
+            }
+            else{
+                root.value = this.min(root.right)
+                root.right = this.deleteNode(root.right,value)
+            }
+        }
+        return root
+    }
+
+    delete(value){
+        this.root = this.deleteNode(this.root,value)
+    }
 }
 
-const heap = new MaxbinaryHeap()
 
+const bst = new BinarySearchTree()
 
+bst.insert(10)
+bst.insert(20)
+bst.insert(30)
+bst.insert(40)
+bst.insert(50)
 
-heap.insert(10)
-heap.insert(20)
-heap.insert(35)
-heap.insert(24)
-heap.insert(50)
+bst.delete(10)
 
-heap.delete(35)
-
-console.log(heap)
+// bst.BFS()
+bst.DFS()

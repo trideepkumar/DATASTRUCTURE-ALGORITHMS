@@ -37,13 +37,15 @@ class Trie{
 
     traversal(prefix){
         let words=[]
-    let curr=this.root
+        let curr=this.root
+
         for(let i=0;i<prefix.length;i++){
             if(!curr.keys.has(prefix[i])){
                 return words
             }
             curr=curr.keys.get(prefix[i])
         }
+
         function traverse(node,word){
                  if(node.isWordEnd){
                       words.push(word)
@@ -53,6 +55,7 @@ class Trie{
             traverse(charNode,word+char)
         }
         }
+        
         traverse(curr,prefix)
         console.log(words);
     }

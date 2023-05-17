@@ -36,8 +36,8 @@ class MaxbinaryHeap{
         let index = 0
         let element = this.values[index]
         while(index < this.values.length){
-            let leftChildIndex = 2 * index +1
-            let rightChildIndex = 2 * index +2
+            let leftChildIndex = 2 * index + 1
+            let rightChildIndex = 2 * index + 2
             let swap = null
             let leftChild
             let rightChild

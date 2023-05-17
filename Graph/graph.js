@@ -120,21 +120,38 @@ class Graph{
         return result
     }
 
+    //allvalid paths
+
+    allPath(start,end,path=[]){
+        path.push(start)
+        if(start === end){
+            console.log(path)
+        }
+        else{
+            for(let neighbor of this.adjacencyList[start]){
+                if(!path.includes(neighbor)){
+                    this.allPath(neighbor,end,path)
+                }
+            }
+        }
+        path.pop()
+    }
+
 }
 
 const graph = new Graph()
 
-graph.addVertex("bob")
-graph.addVertex("marley")
-graph.addVertex("steve")
-graph.addVertex("jobs")
-graph.addVertex("ali")
-graph.addVertex("baba")
-graph.addEdge("bob","baba")
-graph.addEdge("steve","jobs")
-graph.addEdge("jobs","ali")
-graph.addEdge("ali" , "baba")
-graph.addEdge("marley","ali")
+graph.addVertex("A")
+graph.addVertex("B")
+graph.addVertex("C")
+graph.addVertex("D")
+graph.addVertex("E")
+graph.addVertex("F")
+graph.addEdge("A","B")
+graph.addEdge("D","E")
+graph.addEdge("C","E")
+graph.addEdge("E","F")
+graph.addEdge("A","E")
 
 
 // graph.removeVertex("bob")
@@ -145,4 +162,6 @@ graph.addEdge("marley","ali")
 
 // console.log(graph.BFS("bob"))
 
-console.log(graph.allValidPaths('bob','ali'))
+// console.log(graph.allValidPaths('bob','ali'))
+
+graph.allPath()

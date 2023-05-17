@@ -34,6 +34,8 @@ class BinarySearchTree{
         }
         return this
     }
+
+
     //search a node in the tree
 
     search(value){
@@ -113,9 +115,9 @@ class BinarySearchTree{
         }
     }
 
-    //DFS DELETING
-   
 
+
+    //DFS DELETING
     deleteNode(root,value){
         if(root === null) return root
         else if(value < root.value){
@@ -124,13 +126,13 @@ class BinarySearchTree{
         else if(value > root.value){
             root.right = this.deleteNode(root.right,value)
         }
-        else{
+        else{   
             if(!root.left && !root.right){
                 return null
-            }
+            } 
             else if(!root.right){
                 return root.left
-            }
+            } 
             else if(!root.left){
                 return root.right
             }
@@ -200,13 +202,13 @@ class BinarySearchTree{
 const tree = new BinarySearchTree
 
 tree.insert(10)
-tree.insert(6)
-tree.insert(15)
-tree.insert(3)
-// tree.insert(8)
 tree.insert(20)
-tree.insert(8)
-tree.insert(35)
+tree.insert(30)
+tree.insert(40)
+tree.insert(50)
+// tree.insert(8)
+// tree.insert(8)
+// tree.insert(35) 
 
 
 
@@ -214,9 +216,12 @@ tree.insert(35)
 // console.log(tree.search(0));
 // tree.Bfs()
 
-// tree.DfsPreorder()
-// tree.DfsPostorder()
-// tree.DFSInorder()
+console.log("pre")
+tree.DfsPreorder()
+console.log("post")
+tree.DfsPostorder()
+console.log("in")
+tree.DFSInorder()
 
 // tree.min()
 // tree.max()
@@ -226,6 +231,6 @@ tree.insert(35)
 // tree.DFSInorder()
 // tree.Isvalid()
 
-console.log(tree.closestValue(33))
+// console.log(tree.closestValue(33))
 
 // tree.Bfs()
