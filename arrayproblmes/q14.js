@@ -20,4 +20,4 @@ var hasGroupsSizeX = function(deck) {
     return [...newArr]
 };
 
-console.log(...hasGroupsSizeX([1]))
+console.log(...hasGroupsSizeX([1,2,3,4,4,3,2,1]))
