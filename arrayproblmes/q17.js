@@ -4,9 +4,6 @@
 
 
 const GCD =(str1,str2) => {
-    if(str1+str2 !== str2+str1){
-        return ""
-    }
     let maxLength = Math.max(str1.length,str2.length)
     let result = []
 
