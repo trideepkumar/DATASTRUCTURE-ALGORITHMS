@@ -14,7 +14,7 @@ class HashTable{
 
     set(key,value){
         const index = this.hash(key)
-        this.table[index] = value
+        this.table[index] = value   
     }
     get(key){
       const index = this.hash(key)

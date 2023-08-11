@@ -10,6 +10,7 @@ class Node{
 
 
 class LinkedList {
+    
     constructor(){
         this.head = null
         this.size = 0
@@ -104,6 +105,7 @@ insert(value,index){
     if(index < 0 || index > this.size ){
         return null
     }
+    
     if(index === 0 ){
         node.next = this.head
         this.head = node

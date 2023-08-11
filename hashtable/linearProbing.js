@@ -6,26 +6,35 @@ class HashTable{
 
     hash(key){
         let hash = 0
+
         for(let i=0; i<key.length;i++){
             hash+=key.charCodeAt(i)
         }
+
         return hash % this.size
+        
     }
 
     set(key,value){
+
         let index = this.hash(key)
+
         while(this.table[index] && this.table[index][0]!==key){
             index = index+1 % this.size
         }
+
         if(this.table[index] && this.table[index][0] === key){
             this.table[index][1] = value
         }
         else{
             this.table[index] = [key,value]
         }
+
         return this.table
+
     }
   
+
     get(key){
         let index = this.hash(key)
            while(this.table[index]){
@@ -64,6 +73,7 @@ class HashTable{
         }
     }
 
+
 }
 
 const table = new HashTable(10)
@@ -73,9 +83,10 @@ table.set("name","marley")
 table.set("name","pablo")
 table.set("place","india")
 table.set("place","colombia")
+table.set("mane","www")
 table.set("number",45)
 table.set("age",7)
-// table.get("name")
-// table.display()
+table.get("name")
+table.display()
 
-console.log(table.isPrime(45))
+// console.log(table.isPrime(45))

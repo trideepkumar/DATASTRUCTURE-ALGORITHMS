@@ -6,11 +6,13 @@ class Node{
 }
 
 class LinkedList{
+
     constructor(){
         this.head = null
         this.tail = null
         this.size = 0
     }
+
     push(value){
         const node = new Node(value)
         if(!this.head){
@@ -22,6 +24,7 @@ class LinkedList{
         }
         this.size++
     }
+    
     pop(){
         if(!this.head){
             return null
