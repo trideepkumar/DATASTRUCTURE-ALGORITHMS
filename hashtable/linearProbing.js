@@ -26,6 +26,7 @@ class HashTable{
         if(this.table[index] && this.table[index][0] === key){
             this.table[index][1] = value
         }
+        
         else{
             this.table[index] = [key,value]
         }

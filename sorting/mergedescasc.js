@@ -12,6 +12,7 @@ const mergeSort =(left,right)=>{
         j++
     }
   }
+
   while(i<left.length){
     sorted.push(left[i])
     i--
@@ -21,6 +22,7 @@ const mergeSort =(left,right)=>{
     j++
   }
   return sorted
+  
 }
   
    console.log(mergeSort([9, 10, 56, 88, 999],[888, 67, 34, 10]))

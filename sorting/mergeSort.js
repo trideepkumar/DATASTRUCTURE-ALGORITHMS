@@ -2,7 +2,8 @@
 function merge(left,right) {
   let i=0
   let j=0
-    let sorted = []
+  let sorted = []
+
     while (left.length && right.length) {
         if(left[0]<=right[0]){
       sorted.push(left.shift())
@@ -10,14 +11,17 @@ function merge(left,right) {
       sorted.push(right.shift())
     }
     }
+
    while(i<left.length){
     sorted.push(left[i])
     i++
    }
+
    while(j<right.length){
     sorted.push(right[j])
     j++
    }
+   
    return sorted
 }
   

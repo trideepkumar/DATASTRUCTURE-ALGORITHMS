@@ -1,4 +1,5 @@
 const natural = (n)=>{
+    
     if(n === 0){
         return []
     }

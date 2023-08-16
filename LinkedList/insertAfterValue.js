@@ -34,7 +34,6 @@ class LinkedList{
             this.head = node
         }
         else{
-            let  current = this.head
             node.next = this.head
             this.head = node
         }

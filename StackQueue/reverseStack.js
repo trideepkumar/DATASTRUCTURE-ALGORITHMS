@@ -9,6 +9,7 @@ class Stack{
     constructor(){
         this.head = null
     }
+    
     push(value){
         const node = new Node(value)
         if(!this.head){
@@ -19,6 +20,7 @@ class Stack{
             this.head = node
         }
     }
+
     reverse(){
         let current = this.head
             let reversedArr = []
@@ -28,6 +30,7 @@ class Stack{
             }
             return console.log(...reversedArr);
     }
+
     display(){
         let current = this.head
         while(current){
