@@ -27,6 +27,7 @@ class LinkedList{
         this.size++
     }
     beforeDeleteafterInsert(value,new_value){
+        
         const node = new Node(new_value)
 
         if(this.head === null){
