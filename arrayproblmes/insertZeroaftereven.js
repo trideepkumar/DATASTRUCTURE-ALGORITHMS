@@ -13,5 +13,6 @@ const insertAfter = (arr)=>{
     return newArr
 }
 
+
 const result  = insertAfter(arr)
 console.log(result)

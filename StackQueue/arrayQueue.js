@@ -6,11 +6,14 @@ class Queue{
     }
 
     //ADDING AN ELEMENT TO THE BACK OF THE QUEUE
+
     enqueue(element){
         this.items[this.tail] = element
         this.tail++
     }
+
     //DEQUEUE : REMOVES AN ELEMENT FROM THE FRONT OF THE QUEUE
+    
     dequeue(){
         const item = this.items[this.head]
         this.items[this.head] = null
