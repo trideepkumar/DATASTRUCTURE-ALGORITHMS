@@ -1,0 +1,20 @@
+                   Applications of Stack
+    
+    1. function calls  and recursion
+    2. undo redo
+    3. browser History
+    
+
+    advantages
+
+    1. easy implementation
+    2. fast access time
+    3. help in function calls
+    4. supports backtracking
+
+
+    Disadvantages
+
+    1. Limited capacity
+    2. stack Overflow & stack Underflow
+    3. No random access

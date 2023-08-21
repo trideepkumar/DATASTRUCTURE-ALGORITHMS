@@ -1,0 +1,19 @@
+                      Applications of Queue
+        
+        1. Task scheduling
+        2. Event handling
+        3. Network Protocols
+        4. Printer Queues
+        
+
+        *  Queues in routers/ switches  
+
+
+
+                         Disadvantages
+
+        1. queue Overflow
+        2. queue Underflow
+        3. Blocking Queues
+        4. memory management
+            

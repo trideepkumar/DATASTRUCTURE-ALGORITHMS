@@ -1,15 +1,15 @@
-
 function merge(left,right) {
+
   let i=0
   let j=0
   let sorted = []
 
     while (left.length && right.length) {
-        if(left[0]<=right[0]){
-      sorted.push(left.shift())
-    }else{
-      sorted.push(right.shift())
-    }
+          if(left[0]<=right[0]){
+            sorted.push(left.shift())
+          }else{
+            sorted.push(right.shift())
+          }
     }
 
    while(i<left.length){

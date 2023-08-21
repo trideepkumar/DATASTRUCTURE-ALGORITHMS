@@ -10,15 +10,17 @@ class BinarySearchTree{
     constructor(){
         this.root = null
     }
+
     //insert method 
     insert(value){
         const node = new Node(value)
         if(!this.root) this.root = node
         let current = this.root
+        
         while(current){
             if(current.value === value) return undefined
             if(current.value < value){
-                if(!current.right){
+                   if(!current.right){
                     current.right = node
                     break
                 }

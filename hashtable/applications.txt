@@ -1,0 +1,11 @@
+               Applications of Hash table
+
+    1.  Database Indexing
+    2.  Password Storage
+    3.  Cryptography
+    4.  Load Balancing
+    5.  Image Proccessing
+    6.  Blockchain
+
+
+   

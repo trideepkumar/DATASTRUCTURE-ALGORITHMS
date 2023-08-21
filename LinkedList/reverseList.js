@@ -59,6 +59,6 @@ list.insert(50)
 
 list.print()
 
-list.reverseLinkedList()
+// list.reverseLinkedList()
 
-list.print()
+// list.print()

@@ -1,0 +1,10 @@
+                Complexity of LinkedList
+
+                      worst case    
+
+  insertion      deletion      search       access
+
+  o(n)             0(n)         o(n)         o(n)
+
+
+  Best case : o(1)

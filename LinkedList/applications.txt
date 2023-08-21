@@ -1,0 +1,21 @@
+                              Applications of LinkedList
+
+
+1. implementation of stack & queue
+2. Dynamic memory allocation
+
+
+
+                 Real life Applications
+
+1. Image viewer
+2. previous and next page web Browser
+3. Music Player
+4. File systems
+
+                     Applications of Doubley LinkedList
+
+  1. undo redo 
+  2. back and forward button in Browser
+  3. used in other data structures
+    

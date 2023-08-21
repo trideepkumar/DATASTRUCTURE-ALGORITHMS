@@ -1,0 +1,5 @@
+                Complexity analysis of Stack
+
+              push()       pop()        peek()            
+
+               o(1)        0(1)          o(1) 

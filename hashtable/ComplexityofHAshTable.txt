@@ -1,0 +1,7 @@
+                Complexity of hashtable
+
+    For lookup, insertion, and deletion operations, 
+    hash tables have an average-case time complexity of O(1).
+    Yet, these operations may,
+    in the worst case, require O(n) time,
+    where n is the number of elements in the table.

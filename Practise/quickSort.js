@@ -35,6 +35,7 @@ function swap(arr, i, j) {
     arr[j] = temp;
 }
 
-const arr = [1, 3, 5, 2, 5, 4, 36, 34653, 4, 3, 7, 3];
+// const arr = [1, 3, 5, 2, 5, 4, 36, 34653, 4, 3, 7, 3];
+const arr = [2,-6,-1,6,9,3]
 quickSort(arr);
 console.log(arr); // Output: [1, 2, 3, 3, 3, 4, 4, 5, 5, 7, 36, 34653]
