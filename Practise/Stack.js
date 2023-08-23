@@ -25,6 +25,13 @@ class Stack{
         this.head = this.head.next
         this.size--
     }
+    display(){
+        let current = this.head
+        while(current){
+            console.log(current.value)
+            current = current.next
+        }
+    }
 }
 
 const stack = new Stack()
@@ -37,4 +44,4 @@ stack.push(50)
 
 stack.pop()
 
-console.log(stack)
+stack.display()

@@ -33,7 +33,7 @@ class LinkedList{
         if(this.head === this.tail){
             this.tail = null
         }
-        this.head = this.head.next
+        this.tail = this.head.tail
         this.size--
         return current.value
     }

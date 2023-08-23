@@ -25,3 +25,6 @@ class HashTable {
     }
   }
 }
+
+
+const table = new HashTable(10)

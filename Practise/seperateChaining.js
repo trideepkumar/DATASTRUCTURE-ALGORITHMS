@@ -21,6 +21,18 @@ class HashTable{
         }else{
             this.table[index].push([key,value])
         }
+        
     }
 
 }
+
+const table = new HashTable(10)
+
+table.set('name','bob')
+table.set('name','marley')
+table.set('age',132)
+
+
+console.log(table)
+
+
