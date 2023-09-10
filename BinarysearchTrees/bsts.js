@@ -215,15 +215,15 @@ tree.insert(50)
 
 
 
-// console.log(tree.search(0));
+// console.log(tree)
 // tree.Bfs()
 
-console.log("pre")
-tree.DfsPreorder()
-console.log("post")
-tree.DfsPostorder()
-console.log("in")
-tree.DFSInorder()
+// console.log("pre")
+// tree.DfsPreorder()
+// console.log("post")
+// tree.DfsPostorder()
+// console.log("in")
+// tree.DFSInorder()
 
 // tree.min()
 // tree.max()
@@ -231,8 +231,8 @@ tree.DFSInorder()
 // tree.delete(20)
 
 // tree.DFSInorder()
-// tree.Isvalid()
+tree.Isvalid()
 
-// console.log(tree.closestValue(33))
+// console.log(tree.closestValue(6))
 
 // tree.Bfs()

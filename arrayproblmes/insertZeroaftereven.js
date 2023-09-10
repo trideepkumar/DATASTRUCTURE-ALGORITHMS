@@ -13,6 +13,13 @@ const insertAfter = (arr)=>{
     return newArr
 }
 
+//one liner 
+
+const oneLiner = (arr)=> arr.flatMap((num)=>(num%2===0 ? [num,0] : [num]))
+
 
 const result  = insertAfter(arr)
-console.log(result)
+// console.log(result)
+
+console.log(oneLiner(arr))
+
