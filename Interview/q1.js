@@ -51,7 +51,23 @@
 // console.log(capitalizedSentence);
 
 
-let a = 1010
+    const capitalize = (sentence)=>{
+        const words = sentence.split('')
 
-let reversed = a.toString().split('').reverse()
-console.log(parseInt(reversed))
+        const capitalizeWord = words.map((word)=>{
+            if(word.length > 0){
+                return word.charAt(0).toUpperCase()+word.slice(1)
+            }else{
+                return ''
+            }
+        
+        })
+
+         const result = capitalizeWord.join(' ')
+
+         return result
+    }
+
+    let sentence = 'node is good'
+
+   console.log( capitalize(sentence) )
