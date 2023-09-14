@@ -12,7 +12,7 @@ const quickSort = (arr, start=0 , end=arr.length-1)=>{
         let i = start-1
         let pivot = arr[end]
         for(let j=start ;j<end; j++){
-            if(arr[j]<pivot){
+            if(arr[j]<=pivot){
                 i++
                 let temp = arr[i]
                 arr[i] = arr[j]

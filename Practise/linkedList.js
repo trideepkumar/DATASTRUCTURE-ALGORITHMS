@@ -59,28 +59,46 @@ class LinkedList {
 
     //inserting a value after a given index
 
-  insertValueAfterIndex(value,index){
+//   insertValueAfterIndex(value,index){
 
-    const node = new Node(value)
+//     const node = new Node(value)
 
-    if(index < 0 || index > this.size){
-        return null
-    }
-    if(index === 0){
-        node.next = this.head
-        this.head = node
-    }else{
-        let prev = this.head
-        for(let i =0 ; i < index ; i++){
-             prev = prev.next
+//     if(index < 0 || index > this.size){
+//         return null
+//     }
+//     if(index === 0){
+//         node.next = this.head
+//         this.head = node
+//     }else{
+//         let prev = this.head
+//         for(let i =0 ; i < index ; i++){
+//              prev = prev.next
+//         }
+//         node.next = prev.next
+//         prev.next = node
+//     }
+
+//     this.size++
+
+//   }
+     insertValueAfterIndex(value,index){
+        const node = new Node(value)
+        if(index<0 || index > this.size){
+            return null
         }
-        node.next = prev.next
-        prev.next = node
-    }
-
-    this.size++
-
-  }
+        if(index === 0){
+            node.next = this.head
+            this.head = node
+        }else{
+            let prev = this.head
+            for(let i =0 ;i<index;i++){
+                prev = prev.next
+            }
+            node.next = prev.next
+            prev.next = node
+        }
+        this.size++
+     }
 }
 
 
@@ -95,7 +113,7 @@ list.append(40)
 list.prepend(7)
 
 list.insertValueAfterIndex(11,3)
-list.insertValueAfterIndex(35,1)
+// list.insertValueAfterIndex(35,1)
 
 // console.log(list)
 

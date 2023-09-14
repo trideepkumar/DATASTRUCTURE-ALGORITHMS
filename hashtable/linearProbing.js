@@ -16,23 +16,17 @@ class HashTable{
     }
 
     set(key,value){
-
         let index = this.hash(key)
-
         while(this.table[index] && this.table[index][0]!==key){
             index = index+1 % this.size
         }
-
         if(this.table[index] && this.table[index][0] === key){
             this.table[index][1] = value
-        }
-        
+        }      
         else{
             this.table[index] = [key,value]
         }
-
         return this.table
-
     }
   
 

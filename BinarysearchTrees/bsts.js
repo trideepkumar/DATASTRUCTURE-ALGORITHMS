@@ -52,7 +52,7 @@ class BinarySearchTree{
     }
 
     //Breadfirst Search
-
+    
     Bfs(){
         let queue =[this.root]
         while(queue.length){
@@ -187,15 +187,13 @@ class BinarySearchTree{
             difference = Math.abs(value - this.root.value)
             console.log(difference)
             if(difference < largest){
-                console.log(">")
                 largest = difference
                 close = this.root.value
-                console.log(">")
             }
            
            return this.closestValue(this.root.right,value)
         }
-        return close
+        // return close
     }
    
 
@@ -208,13 +206,13 @@ tree.insert(20)
 tree.insert(30)
 tree.insert(40)
 tree.insert(50)
+tree.insert(8)
 // tree.insert(8)
-// tree.insert(8)
-// tree.insert(35) 
+tree.insert(35) 
 
 
 
-
+// tree.validateBst(10,8,400)
 // console.log(tree)
 // tree.Bfs()
 
@@ -231,8 +229,8 @@ tree.insert(50)
 // tree.delete(20)
 
 // tree.DFSInorder()
-tree.Isvalid()
+// tree.Isvalid()
 
-// console.log(tree.closestValue(6))
+tree.closestValue(35)
 
 // tree.Bfs()

@@ -12,7 +12,6 @@ class Node {
   
     printList() {
       let currentNode = this.head;
-  
       while (currentNode) {
         console.log(currentNode.data);
         currentNode = currentNode.next;
@@ -23,7 +22,6 @@ class Node {
       if (!node) {
         return;
       }
-  
       this.printListReverse(node.next);
       console.log(node.data);
     }

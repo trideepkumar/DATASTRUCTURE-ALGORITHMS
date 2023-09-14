@@ -20,7 +20,7 @@
 // const result = unique(arr)
 // console.log(result)
 
-const arr = [1,1,3,2,5,1,7,1,5,3,7,49,1,1]
+const arr = [1,1,3,2,5,1,7,1,5,3,7,0,49,1,1]
 const uniqueArray= []
 
 for(let i=0 ; i<arr.length; i++){
@@ -35,4 +35,4 @@ for(let i=0 ; i<arr.length; i++){
     }
 }
 
-console.log(uniqueArray)
+console.log(uniqueArray.sort((a,b)=> b-a))

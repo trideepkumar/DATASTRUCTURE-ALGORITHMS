@@ -6,4 +6,9 @@ const result = arr.map((a)=>{
     return a*a
 })
 
+arr.forEach((element, index, array) => {
+    array[index] = element * 2;
+  });
 console.log(result)
+
+console.log(arr)

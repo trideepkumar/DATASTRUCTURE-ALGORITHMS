@@ -101,8 +101,9 @@ trie.insert("heist")
 trie.insert("heap")
 trie.insert("trideep")
 trie.insert("host")
-trie.traversal('he')
+
+trie.traversal('h')
 
 // console.log(trie.contains("hello"))
 
-trie.fulltraverse()
+// trie.fulltraverse()
