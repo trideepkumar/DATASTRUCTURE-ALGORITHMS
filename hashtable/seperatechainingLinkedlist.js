@@ -8,25 +8,6 @@ class Node{
     }
 }
 
-class LinkedList {
-    constructor() {
-      this.head = null
-      this.tail = null
-      this.length = 0
-    }
-    unshift(val) {
-      let newNode = new Node(val)
-      if (!this.head) {
-        this.head = newNode
-        this.tail = newNode
-      } else {
-        let temp = this.head
-        this.head = newNode
-        this.head.next = temp
-      }
-      return ++this.length
-    }
-  }
 
 
 class HashTable {

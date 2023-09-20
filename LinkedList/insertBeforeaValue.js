@@ -28,12 +28,15 @@ class LinkedList{
     //insertbefore a value
     insertBeforeValue(value,new_value){
         const node = new Node(new_value)
+
         if(this.head === null){
             return console.log('couldnt insert');
         }
+
         else if(this.head.value === value){
             this.head =node
         }
+        
         else{
             let prev = this.head
             while(prev.next != null && prev.next.value != value){

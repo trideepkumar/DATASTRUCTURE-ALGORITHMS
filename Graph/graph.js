@@ -42,7 +42,9 @@ class Graph{
     //Breadth first search
 
     BFS(vertex){
+        
         const queue = [vertex]
+
         const visited = {}
         const result = []
         
