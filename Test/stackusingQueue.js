@@ -1,4 +1,5 @@
 class Stack{
+    
     constructor(){
         this.queue1 = []
         this.queue2 = []
@@ -24,6 +25,7 @@ class Stack{
             return null
         }
     }
+
 }
 
 

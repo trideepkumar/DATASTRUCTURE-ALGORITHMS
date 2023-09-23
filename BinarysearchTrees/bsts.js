@@ -16,7 +16,7 @@ class BinarySearchTree{
         const node = new Node(value)
         if(!this.root) this.root = node
         let current = this.root
-        
+
         while(current){
             if(current.value === value) return undefined
             if(current.value < value){
@@ -234,3 +234,4 @@ tree.insert(35)
 tree.closestValue(35)
 
 // tree.Bfs()
+

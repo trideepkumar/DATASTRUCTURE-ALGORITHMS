@@ -23,10 +23,14 @@ class LinkedList {
   }
 
   insertAfter(value,new_value){
+
     const node = new Node(new_value)
+
     let current = this.head
     let valueFound = false
+
     while(current){
+
       if(current.value === value){
         node.next = current.next
         current.next = node
@@ -34,8 +38,11 @@ class LinkedList {
         break
       }
       current = current.next
+      
     }
+
     if(!valueFound) console.log("value not found in list !")
+
   }
 
   delete(){

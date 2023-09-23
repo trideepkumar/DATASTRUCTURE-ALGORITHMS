@@ -16,4 +16,5 @@ obj1.norFun();
 
 
 //this in arrow function will point in the window 
+
 //in the normal fucntion it will point in the object itself

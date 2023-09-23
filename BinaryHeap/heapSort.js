@@ -4,9 +4,9 @@ class Heap{
     }
     
     heapify(arr = [] , n = arr.length , index){
-        let left = 2 *index +1
-        let right = 2 *index +2
-        let largest = index
+        let left = 2 * index +1
+        let right = 2 * index +2
+        let largest =  index
         if(left < n && arr[left] > arr[index]){
             largest = left
         }
