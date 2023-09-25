@@ -15,6 +15,10 @@ const str = 'trideep'
 //     return letters.join('')
 // }
 
+
+
+
+
 const result = str.replace(/[aeiou]/g , '#')
 
 
