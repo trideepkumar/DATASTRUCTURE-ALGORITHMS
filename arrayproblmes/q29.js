@@ -1,5 +1,6 @@
 // I have an array named "carManufacturers", I need to figure out the second largest car manufacturer in terms of the length of the name of the car manufacturer. Write a programme for the same.
 
+
 const carManufacturers = [
   "Toyota",
   "Ford",

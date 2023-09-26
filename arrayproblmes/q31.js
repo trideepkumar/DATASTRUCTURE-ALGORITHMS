@@ -11,18 +11,17 @@ const carManufacturers = [
   "Mercedes-Benz",
 ];
 
-
 // Use the sort method with a comparison function
 
 // const sortCar = (arr) => {
 //     const sortedArray = arr.sort((a, b) => {
 //       return a.length - b.length;
 //     });
-  
+
 //     return sortedArray;
 //   };
-  
-//using the normal functions 
+
+//using the normal functions
 
 // const sortCar = (arr)=>{
 //     const lengthResult = arr.map((carLen) => {return {element:carLen, length:carLen.length}} )
@@ -32,25 +31,51 @@ const carManufacturers = [
 
 //     return sortedArray
 // }
-  
-
-
 
 //   console.log(sortCar(carManufacturers));
 
+//Code in an asynchronous way
 
-//finding the length and sorting 
+// Modified sortArr function with asynchronous functionality
 
-const sortArr = (arr)=>{
+const sortArrAsync = async (arr) => {
+    try {
 
-    let length = arr.map((car)=>{return{name:car, length:car.length}})
-
-    length.sort((a,b)=>a.length-b.length)
-
-    let sortedArray = length.map((car)=> {return car.name})
-
-    return sortedArray
-    
-}
-
-console.log(sortArr(carManufacturers))
+      const fetchedData = await fetchData(arr)
+  
+      console.log(fetchedData)
+  
+      const length = fetchedData.map((car) => ({
+        name: car,
+        length: car.length,
+      }));
+  
+      length.sort((a, b) => a.length - b.length)
+  
+      const sortedArray = length.map((car) => car.name)
+  
+      return sortedArray
+    } catch (error) {
+      console.error("An error occurred:", error)
+      throw error;
+    }
+  };
+  
+  const fetchData = (arr) => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(arr);
+      }, 2000);
+    });
+  };
+  
+  // Call the sortArrAsync function correctly using await
+  (async () => {
+    try {
+      const sortedCarManufacturers = await sortArrAsync(carManufacturers);
+      console.log(sortedCarManufacturers);
+    } catch (error) {
+      console.error("Error while sorting:", error);
+    }
+  })();
+  

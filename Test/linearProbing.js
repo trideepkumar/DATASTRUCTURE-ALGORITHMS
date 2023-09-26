@@ -61,7 +61,7 @@ table.set('place','india')
 table.set('ecalp','usa')
 table.set('paelc','nothing')
 table.set('age',21)
-table.set('ega',50)
+table.set('ega',5)
 table.set('job','dont')
 
 

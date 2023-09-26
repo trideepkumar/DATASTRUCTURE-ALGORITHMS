@@ -1,100 +1,99 @@
-class Node{
-    constructor(value){
-        this.value = value
-        this.next = null
-    }
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
 }
 
-class LinkedList{
-    constructor(){
-        this.head = null
-        this.size = 0
-    }
-    insert(value){
-        const node = new Node(value)
-          if(this.size === 0){
-            this.head = node
-          }
-          else{
-            let prev = this.head
-            while(prev.next){
-                prev= prev.next
-            }
-            node.next = prev.next
-            prev.next = node
-          }
-          this.size++
-    } 
+class Linkedlist {
+  constructor() {
+    this.head = null;
+    this.size = 0;
+  }
 
-    insertBefore(value, new_value){
-        const node = new Node(new_value)
-        if(this.size === 0){
-            this.head = node
-        }
-        else{
-            let current = this.head
-            while(current && current.next.value === value){
-                node.next = current.next
-                current.next = node
-            }
-        }
-        this.size++
+  insert(value) {
+    const node = new Node(value);
+
+    if (!this.head) {
+      this.head = node;
+    } else {
+      node.next = this.head;
+      this.head = node;
     }
 
-    insertAfter(value, new_value){
-        const node = new Node(new_value)
-        if(this.size === 0 ){
-            this.head = node
-        }
-        else{
-            let current = this.head
-            while(current.next && current.next.value === value){
-                current = current.next
-            }
-            node.next = current.next
-            current.next = node
-        }
-        this.size++
-    }
+    this.size++;
+  }
 
-    deleteBefore(value){
-        let current = this.head
-        let prev = null
-        while(current!=null && current.next.value !== value){
-            prev = current
-            current = current.next 
-            }
-            prev.next = current.next
-            this.size--
-    }
-    deleteAfter(value){
-        let current = this.head
-       while(current){
-        if(current && current.value === value && current.next){
-        current.next = current.next.next
-        }
-        current = current.next
-        this.size--
-       }
-      
-    }
+  insertAfter(value, new_value) {
+    const node = new Node(new_value);
 
-    print() {
-        let current = this.head
-        while(current) {
-            console.log(current.value)
-            current = current.next
-        }
+    let current = this.head;
+    let prev = null;
+    let valueFound = false;
+
+    while (current) {
+      if (current.value === value) {
+        node.next = current.next;
+        current.next = node;
+        prev.next = current.next;
+        valueFound = true;
+        break;
+      }
+      prev = current;
+      current = current.next;
     }
-    
+    if (!valueFound) console.log("value not found");
+  }
+
+  display() {
+    let current = this.head;
+    while (current) {
+      console.log(current.value);
+      current = current.next;
+    }
+  }
 }
 
-const list = new LinkedList()
+const list1 = new Linkedlist();
+const list2 = new Linkedlist();
 
-list.insert(10)
-list.insert(20)
-list.insert(30)
-list.insert(40)
-list.insert(50)
-list.deleteAfter(30)
-list.print()
+list1.insert(10);
+list1.insert(20);
+list1.insert(30);
+list1.insert(40);
+list1.insert(50);
+
+list2.insert(10);
+list2.insert(40);
+list2.insert(30);
+list2.insert(20);
+list2.insert(10);
+
+// list1.insertAfter(10,100)
+// list1.insertAfter(20,100)
+// list1.insertAfter(30,100)
+// list1.insertAfter(40,100)
+// list1.insertAfter(50,100)
+
+// list1.display()
+function sumReverse(list1, list2) {
+    let sum = 0;
+    let current1 = list1.head;
+    console.log("list 1 head",current1.value)
+    let current2 = list2.head;
+    console.log("list 2 head",current2.value)
+  
+   
+    if (current1 && current2) {
+      sum = current1.value + current2.value;
+    }
+  
+    return sum;
+  }
+  
+  const result = sumReverse(list1, list2);
+
+  const last =result.toString().split('').reverse().join('')
+  
+  console.log("Reversed Sum:", last);
+  
