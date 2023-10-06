@@ -1,6 +1,6 @@
 const person = {
-    fullName  : function(city,country){
-        return this.firstName + " " + this.lastName +" "+city +" "+ country
+    fullName  : function(city,country,arg3,arg4){
+        return this.firstName + " " + this.lastName +" "+city +" "+ country+" "+arg3+" "+arg4
     }
 }
 
@@ -9,6 +9,6 @@ const person1 = {
     lastName  : "Marley"
 }
 
-const name = person.fullName.apply(person1,["florida" ,"paris"])
+const name = person.fullName.apply(person1,["florida" ,"paris","third","fourth"])
 
 console.log(name)

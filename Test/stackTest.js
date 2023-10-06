@@ -50,6 +50,7 @@ class Stack{
             current = current.next
         }
     }
+    
 }
 
 let stack = new Stack()

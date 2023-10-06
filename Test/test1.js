@@ -35,6 +35,21 @@ class LinkedList{
                 prev.next = current.next
             }
         }
+        
+         reverse(){
+            let current = this.head
+            let prev = null
+            let next = null
+
+            while(current){
+                next = current.next
+                current.next = prev
+                prev = current
+                current= next
+            }
+            this.head = prev
+         }
+        
 
      display(){
         let current = this.head
@@ -55,6 +70,11 @@ list.insert(50)
 list.insert(60)
 list.insert(70)
 
-list.deleteFourth()
+// list.deleteFourth()
 
+list.display()
+
+list.reverse()
+
+console.log("after reversal")
 list.display()

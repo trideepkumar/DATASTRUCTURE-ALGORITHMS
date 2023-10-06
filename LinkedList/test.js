@@ -76,7 +76,10 @@ list2.insert(10);
 // list1.insertAfter(50,100)
 
 // list1.display()
+
+
 function sumReverse(list1, list2) {
+
     let sum = 0;
     let current1 = list1.head;
     console.log("list 1 head",current1.value)
@@ -88,12 +91,25 @@ function sumReverse(list1, list2) {
       sum = current1.value + current2.value;
     }
   
-    return sum;
+    // return sum.toString().split('').reverse()
+
+    const reversedSumList = new LinkedList();
+
+
+    const newList = new Linkedlist()
+  
+    result.forEach((char)=>{
+          newList.append(parseInt(char))
+    })
+    return reversedSumList
   }
   
   const result = sumReverse(list1, list2);
 
-  const last =result.toString().split('').reverse().join('')
+  const last =result
   
   console.log("Reversed Sum:", last);
+
+
+ 
   

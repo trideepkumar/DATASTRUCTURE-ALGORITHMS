@@ -10,13 +10,14 @@ const carManufacturers = [
   "Nissan",
   "BMW",
   "Mercedes-Benz",
-];
+]
 
 const secondLarMAnufacturer = (carManufacturers) => {
+
   let m = carManufacturers.length;
   console.log(m);
 
-  let CompanynameLen = carManufacturers.map((manufactur) => manufactur.length);
+  let CompanynameLen = carManufacturers.map((manufactur) => manufactur.length)
 
   console.log(CompanynameLen);
 

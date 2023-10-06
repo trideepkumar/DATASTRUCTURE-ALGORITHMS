@@ -78,7 +78,7 @@ class Graph{
         return result
     }
 
-    //DEAPTH FIRST USING ITERATION
+    //DEAPTH FIRST USING STACK 
 
     DFS(vertex){
         let stack = [vertex]

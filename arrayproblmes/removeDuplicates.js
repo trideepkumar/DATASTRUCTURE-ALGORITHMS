@@ -28,9 +28,26 @@ const removeDuplicates = (arr)=>{
 //     arr.splice(i, arr.length - i);
 //     return arr.length;
 //   }
+
+const dupli = (arr)=>{
+    let duplicates = []
+    let dupObj = {}
+
+    for(let item of arr){
+        if(!dupObj[item]){
+            duplicates.push(item)
+        }else{
+            dupObj[item] = true
+        }
+    }
+    return duplicates
+}
   
 
 
 const arr = [1, 1, 2, 2, 3, 4, 5, 5]
 const length = removeDuplicates(arr)
+const result = dupli(arr)
 console.log(arr) 
+
+console.log("result",result)
