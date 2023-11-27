@@ -41,7 +41,7 @@ const duplicatesArr = (arr)=>{
 
 //one liner
 
-const OneLiner = ((arr)=> arr.filter((item,index)=> arr.indexOf(item) !== index))
+    const OneLiner = ((arr)=> arr.filter((item,index)=> arr.indexOf(item) !== index))
 
 const arr = [1,2,23,4,5,56,67,5,5,4,3,3,3,323,2,2]
 const result = duplicates(arr)
