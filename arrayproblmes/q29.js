@@ -12,29 +12,50 @@ const carManufacturers = [
   "Mercedes-Benz",
 ]
 
-const secondLarMAnufacturer = (carManufacturers) => {
 
-  let m = carManufacturers.length;
-  console.log(m);
 
-  let CompanynameLen = carManufacturers.map((manufactur) => manufactur.length)
+// const secondLarMAnufacturer = (carManufacturers) => {
 
-  console.log(CompanynameLen);
+//   let m = carManufacturers.length;
+//   console.log(m);
 
-  let large = -Infinity;
-  let secLarge = -Infinity;
-  for (let i = 0; i < CompanynameLen.length; i++) {
-    if (CompanynameLen[i] > large) {
-      secLarge = large;
-      large = CompanynameLen[i];
-    } else if (CompanynameLen[i] > secLarge && CompanynameLen[i] !== large) {
-      secLarge = CompanynameLen[i];
-    }
-  }
+//   let CompanynameLen = carManufacturers.map((manufactur) => manufactur.length)
 
-  let resultIndex = CompanynameLen.indexOf(secLarge);
+//   console.log(CompanynameLen);
 
-  return carManufacturers[resultIndex];
-};
+//   let large = -Infinity;
+//   let secLarge = -Infinity;
+//   for (let i = 0; i < CompanynameLen.length; i++) {
+//     if (CompanynameLen[i] > large) {
+//       secLarge = large;
+//       large = CompanynameLen[i];
+//     } else if (CompanynameLen[i] > secLarge && CompanynameLen[i] !== large) {
+//       secLarge = CompanynameLen[i];
+//     }
+//   }
 
+//   let resultIndex = CompanynameLen.indexOf(secLarge);
+
+//   return carManufacturers[resultIndex];
+// };
+
+
+const secondLarMAnufacturer =(carManufacturers)=>{
+
+  const companyLen = carManufacturers.map((car)=>car.length)
+  console.log(companyLen)
+  let largest = -Infinity
+  let secLarge = -Infinity
+  for(let i=0 ; i<companyLen.length ;i++){
+      if(companyLen[i]>largest){
+        secLarge = largest
+        largest = companyLen[i]
+      }else if(companyLen[i]>secLarge && companyLen[i] !== largest){
+           secLarge = companyLen[i]
+        }
+        }
+      console.log(companyLen.indexOf(secLarge))
+      let ind =companyLen.indexOf(secLarge)
+        return carManufacturers[ind]
+}
 console.log(secondLarMAnufacturer(carManufacturers));
